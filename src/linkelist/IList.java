@@ -16,5 +16,8 @@ public interface IList <T>{
     public boolean empty();
     public int size();
     public Iterator<T> Iterador(); 
+    public void irInicio() throws ListException;
+    public void irFinal() throws ListException;
+    public void previous() throws ListException;
     
 }

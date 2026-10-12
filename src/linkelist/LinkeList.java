@@ -3,8 +3,11 @@ package linkelist;
 
 public class LinkeList {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws ListException {
         
+        // LISTA SIMPLE
+        
+        /*
         ListaEnlazada<String> miLista = new ListaEnlazada<>();
         
         miLista.append("Manzana");
@@ -48,6 +51,54 @@ public class LinkeList {
         System.out.println("\nTamano despues de concatenar las listas: "+ miLista.size());
         
         miLista.clear();
-        System.out.println("Tamano despues de usar clear: "+ miLista.size());
+        System.out.println("Tamano despues de usar clear: "+ miLista.size());*/
+    
+        // LISTA DOBLEMENTE ENLAZADA CIRCULAR
+        System.out.println("-------------------------------");
+        System.out.println("Pruebas de Lista doblemente enlazada circular");
+        System.out.println("------------------------------- \n");
+        
+        ListaDoblementeEnlazadaCircular<String> listaCircular = new ListaDoblementeEnlazadaCircular<>();
+        
+        listaCircular.append("Manzana");
+        listaCircular.append("Pera");
+        listaCircular.append("Coco");
+
+        System.out.println(listaCircular);
+
+        System.out.println("El  iterador se coloca al inicio");
+        listaCircular.irInicio();
+        System.out.println(listaCircular.getActual());
+
+        System.out.println("\nEl iterado se coloca al final");
+        listaCircular.irFinal();
+        System.out.println(listaCircular.getActual());
+
+        System.out.println("\nEl iterador se coloca nodo anterior");
+        listaCircular.previous();
+        System.out.println(listaCircular.getActual());
+
+        System.out.println("\nElementos:");
+        for (String fruta : listaCircular) {
+            System.out.println(fruta);
+        }
+        
+        /*ListaDoblementeEnlazadaCircular<String> listaCircular = new ListaDoblementeEnlazadaCircular<>();
+
+        listaCircular.append("Manzana");
+        listaCircular.append("Pera");
+        listaCircular.append("Coco");
+
+        listaCircular.irInicio();
+        System.out.println("El  iterador se coloca al inicio");
+        System.out.println();
+        
+        listaCircular.irFinal();
+        System.out.println("El iterado se coloca al final");
+        
+        listaCircular.previous();
+        System.out.println("El iterador se coloca nodo anterior");
+        */
     }   
+    
 }
